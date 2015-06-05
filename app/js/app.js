@@ -21,5 +21,20 @@
                 controller: 'notificationController',
                 templateUrl: 'partials/notifications.html'
             })
+            .when('/profile',
+            {
+                controller: 'profileController',
+                templateUrl: 'partials/profifle.html'
+            })
+            .when('/settings',
+            {
+                controller: 'settingsController',
+                templateUrl: 'partials/settings.html'
+            })
+            .when('/activity',
+            {
+                controller: 'activityController',
+                templateUrl: 'partials/activity.html'
+            })
             .otherwise({redirectTo: '/home'});
     }]);
