@@ -1,0 +1,16 @@
+.loginContainer {
+    height: 250px;
+    width: 100%
+}
+
+.outerBox {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.innerBox {
+    position: relative;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}

@@ -1,0 +1,92 @@
+/*Generic*/
+
+body {
+    font-family: "Avenir Next", "Nunito", "Helvetica";
+}
+
+.transparent-half {
+    background: rgba(0,0,0,0.5);
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.fixed {
+    position: fixed;
+}
+
+.relative {
+    position: relative;
+}
+
+/*margins*/
+.margin10{
+    margin: 10px;
+}
+
+.marginBottom10 {
+    margin-bottom: 10px;
+}
+
+.margin5n0 {
+    margin: 5px 0;
+}
+.margin10n0{
+    margin: 10px 0px;
+}
+
+.margin1p {
+    margin: 1%;
+}
+
+.margin0auto {
+    margin: 0 auto;
+}
+
+/*padding */
+
+.padding10 {
+    padding:10px;
+}
+
+.padding20 {
+    padding:20px;
+}
+
+.padding10n0 {
+    padding:10px 0;
+}
+
+.padding5n0 {
+    padding:5px 0;
+}
+
+.paddingTop10 {
+    padding-top: 10px;
+}
+/*colors*/
+
+.red-bg {
+    background: red
+}
+
+.red {
+    background: red;
+}
+
+.green {
+    background: green;
+}
+
+.white {
+    color: white;
+}
