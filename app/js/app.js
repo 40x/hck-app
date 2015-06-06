@@ -28,6 +28,12 @@
                 controller: 'profileController',
                 controllerAs: 'pc'
             })
+            .state('activity', {
+                url:'/activity',
+                templateUrl: 'partials/activity.html',
+                controller: 'ActivityCtrl',
+                controllerAs: 'acVm'
+            })
             .state('settings', {
                 url: '/settings',
                 templateUrl: 'partials/settings.html',
