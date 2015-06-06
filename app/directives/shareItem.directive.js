@@ -9,7 +9,7 @@
             scope : {
                 data : "="
             },
-            template: '<div title="Share" class="pointer fa fa-share" ng-click="sidc.share()"></div>',
+            template: '<div title="Share" class="pointer" ng-class="{\'fa fa-share\': !sidc.label }" ng-click="sidc.share()"><span ng-if="sidc.label">Share</span></div>',
             controller : 'shareItemDirectiveController',
             controllerAs : 'sidc',
             bindToController: true
