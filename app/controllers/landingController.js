@@ -1,10 +1,10 @@
 (function(){
     'use strict';
 
-    function landingCtrl($scope){
+    angular.module('application').controller('landingController', landingCtrl);
+
+    function landingCtrl(){
 
     };
-
-    app.controller('landingController', ['$scope', landingCtrl]);
 
 })();

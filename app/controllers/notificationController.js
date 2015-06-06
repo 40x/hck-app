@@ -1,11 +1,11 @@
 (function(){
     'use strict';
 
-    function notificationCtrl($scope){
-            $scope.page = 'notif';
+    function notificationCtrl(){
+
 
     }
 
-    app.controller('notificationController', ['$scope', notificationCtrl]);
+    angular.module('application').controller('notificationController', notificationCtrl);
 
 })();

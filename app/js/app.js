@@ -1,10 +1,9 @@
 (function(){
 
+    angular.module('application', ['ui.router']);
 
-    var app = angular.module('application', ['ui.router']);
 
-
-    app.config(function($stateProvider, $urlRouterProvider) {
+    angular.module('application').config(function($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');
 
@@ -12,8 +11,9 @@
 
             .state('home', {
                 url: '/home',
+                templateUrl: 'partials/home.html',
                 controller: 'homeController',
-                templateUrl: 'partials/home.html'
+                controllerAs: 'hc'
             });
 
     });

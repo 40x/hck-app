@@ -8,10 +8,10 @@
         </div>
     </div>
 </div>
-<div ng-repeat="item in itemList | filter: searchFilter" class="clearfix lineItem">
+<div ng-repeat="item in hc.itemList | filter: searchFilter" class="clearfix lineItem">
     <div class="row">
         <div class="margin10n0 item-title-box clearfix col-sm-12">
-            <div class="col-sm-9" ng-switch on="editableItem[$index]">
+            <div class="col-sm-9" ng-switch on="hc.editableItem[$index]">
                 <div ng-switch-when="false" class="col-sm-9">
                     <span class="pointer">{{item.name}}</span>
                 </div>
@@ -22,11 +22,11 @@
             <div class="col-sm-3 clearfix fa-lg text-center margin0auto">
                 <div title="Refresh" class="col-xs-2 margin5n0 pointer fa fa-refresh "></div>
                 <div title="Edit" class="col-xs-2 margin5n0 pointer fa fa-pencil"
-                     ng-click="editableItem[$index] = !editableItem[$index]"></div>
+                     ng-click="hc.editableItem[$index] = !editableItem[$index]"></div>
                 <div title="Delete" class="col-xs-2 margin5n0 pointer fa fa-trash"
-                     ng-click="deleteItem($index)"></div>
+                     ng-click="hc.deleteItem($index)"></div>
                 <div title="Toggle View" class="col-xs-2 margin5n0 pointer fa fa-toggle-on"
-                     ng-click="toggleView($index, $event)"></div>
+                     ng-click="hc.toggleView($index, $event)"></div>
                 <div title="Settings" class="col-xs-2 margin5n0 pointer fa fa-cog"></div>
                 <div title="Settings" class="col-xs-2 margin5n0 pointer fa fa-star"></div>
             </div>

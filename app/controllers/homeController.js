@@ -1,9 +1,13 @@
 (function(){
     'use strict';
 
-    function homeCtrl($scope){
+    angular.module('application').controller('homeController', homeCtrl );
 
-        $scope.itemList = [
+    function homeCtrl(){
+
+        var hc= this;
+
+        hc.itemList = [
                 {
                     "name" : "item 1 item 1 item 1 item 1 item 1 item 1 item 1item 1 item 1 item 1 item 1 item 1",
                     "results" : [
@@ -52,21 +56,21 @@
                         }
                     ]
                 }
-            ]
+            ];
 
-            $scope.editableItem = [];
-            for(var i=0; i< $scope.itemList.length; i++){
-                $scope.editableItem.push(false);
+            hc.editableItem = [];
+            for(var i=0; i< hc.itemList.length; i++){
+                hc.editableItem.push(false);
             }
 
-            $scope.deleteItem = function(i){
+            hc.deleteItem = function(i){
 
                 $('.lineItem').eq(i).hide("slow", function () {
-                    $scope.itemList.splice(i,1);
+                    hc.itemList.splice(i,1);
                 });
-            }
+            };
 
-            $scope.toggleView = function(i, evt){
+            hc.toggleView = function(i, evt){
                 var el = evt.target;
                 $('.resultsContainer').eq(i).toggle('ease');
                 if($(el).hasClass('fa-toggle-on')){
@@ -76,7 +80,7 @@
                     $(el).addClass('fa-toggle-on');
                     $(el).removeClass('fa-toggle-off');
                 }
-            }
+            };
 
             $(document).ready(function(){
                 $('.result-box').click(function(){
@@ -84,7 +88,5 @@
                 });
             });
     }
-
-    app.controller('homeController', ['$scope', homeCtrl]);
 
 })();
