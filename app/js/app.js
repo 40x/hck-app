@@ -14,6 +14,13 @@
                 templateUrl: 'partials/home.html',
                 controller: 'homeController',
                 controllerAs: 'hc'
+            })
+
+            .state('notifications', {
+                url: '/notifications',
+                templateUrl: 'partials/notifications.html',
+                controller: 'notificationController',
+                controllerAs: 'nc'
             });
 
     });
