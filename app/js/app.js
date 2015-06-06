@@ -2,8 +2,9 @@
 
     angular.module('application', ['ui.router']);
 
+    config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    angular.module('application').config(function($stateProvider, $urlRouterProvider) {
+    function config($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');
 
@@ -23,6 +24,8 @@
                 controllerAs: 'nc'
             });
 
-    });
+    }
+
+    angular.module('application').config(config);
 
 })();

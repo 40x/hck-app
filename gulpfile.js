@@ -19,6 +19,33 @@ gulp.task('scripts', function(){
         .pipe(gulp.dest('app/dist'));
 });
 
+gulp.task('factories', function(){
+    return gulp.src('app/factories/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('factories.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('app/dist'));
+});
+
+gulp.task('services', function(){
+    return gulp.src('app/services/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('services.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('app/dist'));
+});
+
+gulp.task('directives', function(){
+    return gulp.src('app/directives/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('directives.min.js'))
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('app/dist'));
+});
+
 //minify css
 gulp.task('css', function(){
     return gulp.src('app/css/*.css')
@@ -35,7 +62,7 @@ gulp.task('less', function(){
 });
 
 //reload
-gulp.task('reload-when-done', ['scripts', 'css', 'less'], function(){
+gulp.task('reload-when-done', ['scripts', 'factories', 'directives', 'services', 'css', 'less'], function(){
     liveReload.reload();
 });
 
@@ -47,10 +74,13 @@ gulp.task('watch', function(){
         }
     });
     gulp.watch('app/controllers/*.js', ['reload-when-done']); //js change
+    gulp.watch('app/factories/*.js', ['reload-when-done']); //js change
+    gulp.watch('app/services/*.js', ['reload-when-done']); //js change
+    gulp.watch('app/directives/*.js', ['reload-when-done']); //js change
     gulp.watch('app/css/*.css', ['reload-when-done']); //css change
     gulp.watch('app/less/*.less', ['reload-when-done']); //less change
     gulp.watch('app/partials/*.html', ['reload-when-done']); //html change
 });
 
 //default
-gulp.task('default', ['scripts', 'less', 'css', 'watch'], function(){});
+gulp.task('default', ['scripts', 'factories', 'services', 'directives', 'less', 'css', 'watch'], function(){});

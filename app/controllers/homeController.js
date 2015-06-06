@@ -3,60 +3,13 @@
 
     angular.module('application').controller('homeController', homeCtrl );
 
-    function homeCtrl(){
+    homeCtrl.$inject = ['homeItemsFactory'];
+
+    function homeCtrl(homeItemsFactory){
 
         var hc= this;
 
-        hc.itemList = [
-                {
-                    "name" : "item 1 item 1 item 1 item 1 item 1 item 1 item 1item 1 item 1 item 1 item 1 item 1",
-                    "results" : [
-                        {
-                            "name" : "item1 result1"
-                        },
-                        {
-                            "name" : "item1 result2"
-                        },
-                        {
-                            "name" : "item1 result3"
-                        },
-                        {
-                            "name" : "item1 result4"
-                        },
-                        {
-                            "name" : "item1 result5"
-                        }
-                    ]
-                },
-                {
-                    "name": "item 2",
-                    "results" : [
-                        {
-                            "name" : "item2 result1"
-                        },
-                        {
-                            "name" : "item2 result2"
-                        }
-                    ]
-                },
-                {
-                    "name" : "item 3",
-                    "results" : [
-                        {
-                            "name" : "item3 result1"
-                        },
-                        {
-                            "name" : "item3 result2"
-                        },
-                        {
-                            "name" : "item3 result3"
-                        },
-                        {
-                            "name" : "item4 result4"
-                        }
-                    ]
-                }
-            ];
+        hc.itemList = homeItemsFactory.getItems();
 
             hc.editableItem = [];
             for(var i=0; i< hc.itemList.length; i++){
