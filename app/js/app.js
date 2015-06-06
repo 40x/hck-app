@@ -1,6 +1,6 @@
 (function(){
 
-    angular.module('application', ['ui.router']);
+    angular.module('application', ['ui.router', 'ui.bootstrap']);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
@@ -12,7 +12,7 @@
 
             .state('home', {
                 url: '/home',
-                templateUrl: 'partials/home.html',
+                templateUrl: 'partials/home/home.html',
                 controller: 'homeController',
                 controllerAs: 'hc'
             })

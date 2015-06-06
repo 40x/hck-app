@@ -3,17 +3,19 @@
 
     angular.module('application').controller('homeController', homeCtrl );
 
-    homeCtrl.$inject = ['homeItemsFactory'];
+    homeCtrl.$inject = ['homeItemsFactory', '$modal'];
 
-    function homeCtrl(homeItemsFactory){
+    function homeCtrl(homeItemsFactory,$modal ){
 
         var hc= this;
 
-        hc.itemList = homeItemsFactory.getItems();
+            hc.itemList = homeItemsFactory.getItems();
 
             hc.editableItem = [];
+            hc.favItem = [];
             for(var i=0; i< hc.itemList.length; i++){
                 hc.editableItem.push(false);
+                hc.favItem.push(false);
             }
 
             hc.deleteItem = function(i){
@@ -34,6 +36,39 @@
                     $(el).removeClass('fa-toggle-off');
                 }
             };
+
+
+            hc.addNewItem = function(){
+
+                    var modalInstance = $modal.open({
+                        animation: true,
+                        templateUrl: 'partials/home/addNewItem.html',
+                        controller: 'addNewItemController',
+                        controllerAs : 'ancf',
+                        size:  'md'
+                    });
+
+                    modalInstance.result.then(function (newItem) {
+                        var data = {
+                            "name" : newItem,
+                            "results" : [
+                                {
+                                    "name" : "new result1"
+                                },
+                                {
+                                    "name" : "new result2"
+                                }
+                            ]
+                        };
+                        hc.itemList.unshift(data);
+                        homeItemsFactory.setItems(hc.itemList);
+                    }, function () {
+                        //if closed without adding
+                    });
+            };
+
+
+            ///////
 
             $(document).ready(function(){
                 $('.result-box').click(function(){
