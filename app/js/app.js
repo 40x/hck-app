@@ -16,12 +16,17 @@
                 controller: 'homeController',
                 controllerAs: 'hc'
             })
-
             .state('notifications', {
                 url: '/notifications',
                 templateUrl: 'partials/notifications.html',
                 controller: 'notificationController',
                 controllerAs: 'nc'
+            })
+            .state('profile', {
+                url: '/profile',
+                templateUrl: 'partials/profile.html',
+                controller: 'profileController',
+                controllerAs: 'pc'
             });
 
     }
