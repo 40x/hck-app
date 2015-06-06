@@ -1,0 +1,12 @@
+<h2>Welcome to Notifications Page</h2>
+
+<h1>{{notificationVm.heading}}</h1>
+
+<div class="col-md-12 clearfix">
+    <div>
+        <div class="panel col-md-10 col-md-offset-2" ng-repeat="not in notificationVm.data">
+            <div>{{not.contentName}}</div>
+            <div>{{not.contentNews}}</div>
+        </div>
+    </div>
+</div>
