@@ -1,7 +1,7 @@
-<div class="col-md-12 clearfix">
+<div class="col-md-12 ">
     <div>
-        <div class="panel col-md-10 col-md-offset-2" ng-repeat="activityLog in acVm.data">
-            <div class="col-md-4 fa fa-thumbs-up"> {{activityLog.activity}}</div>
+        <div class="panel clearfix" ng-repeat="activityLog in acVm.data">
+            <div class="col-md-4 fa fa-thumbs-up text-primary"> {{activityLog.activity}}</div>
             <img class="col-md-6" ng-src="{{activityLog.detail}}"> </img>
         </div>
     </div>
