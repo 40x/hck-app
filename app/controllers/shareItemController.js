@@ -3,12 +3,10 @@
 
     angular.module('application').controller('shareItemController', shareItemCtrlFn );
 
-    shareItemCtrlFn.$inject = ['$modalInstance', 'item'];
+    shareItemCtrlFn.$inject = ['item'];
 
-    function shareItemCtrlFn($modalInstance, item){
+    function shareItemCtrlFn(item){
         var sic = this;
-
-        console.log(item);
 
         sic.name = item.name;
 

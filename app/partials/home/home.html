@@ -29,7 +29,7 @@
                      ng-click="hc.deleteItem($index)"></div>
                 <div title="Toggle View" class="col-xs-2 margin5n0 pointer fa fa-toggle-on"
                      ng-click="hc.toggleView($index, $event)"></div>
-                <div title="Share" ng-click="hc.share($index)" class="col-xs-2 margin5n0 pointer fa fa-share"></div>
+                <share-item data="hc.itemList[$index]" class="col-xs-2 margin5n0"></share-item>
                 <div ng-if="!hc.favItem[$index]"
                      ng-click="hc.favItem[$index] = true"
                      title="Favourite" class="col-xs-2 margin5n0 pointer fa fa-star-o"></div>
