@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="application" ng-strict-di>
+<html ng-app="application">
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
@@ -15,7 +15,7 @@
 	</head>
 	<body>
         <header class="text-center">
-            header
+            <span ng-bind="'Something kickass' | uppercase "></span>
         </header>
 		<section class="outer-container">
             <nav ui-view class="container">

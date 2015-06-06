@@ -61,10 +61,27 @@
                             ]
                         };
                         hc.itemList.unshift(data);
+                        hc.editableItem.unshift(false); //open it
+                        hc.favItem.unshift(false); //not fav yet
                         homeItemsFactory.setItems(hc.itemList);
                     }, function () {
                         //if closed without adding
                     });
+            };
+
+            hc.share = function(i){
+                var modalInstance = $modal.open({
+                    animation: true,
+                    templateUrl: 'partials/home/shareItem.html',
+                    controller: 'shareItemController',
+                    controllerAs : 'sic',
+                    size:  'md',
+                    resolve : {
+                        item: (function (i) {
+                            return hc.itemList[i];
+                        })(i)
+                    }
+                });
             };
 
 
