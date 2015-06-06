@@ -20,7 +20,7 @@
                 url: '/notifications',
                 templateUrl: 'partials/notifications.html',
                 controller: 'notificationController',
-                controllerAs: 'nc'
+                controllerAs: 'notificationVm'
             })
             .state('profile', {
                 url: '/profile',
