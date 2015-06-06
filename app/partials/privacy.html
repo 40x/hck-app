@@ -1,6 +1,46 @@
-<h3>Security and Privacy</h3>
-Change your privacy settings.
-<hr>
-<form>
+<div >
+    <h3>Privacy</h3>
+    Change your security and privacy settings.
+    <hr>
+    <div class="col-md-12">
+        <div class="col-md-4">
+            Who can see my stuff
+        </div>
+        <div class="col-md-offset-1 col-md-7">
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        Who can see your future posts?
+                    </accordion-heading>
+                    You can manage the privacy of things you share by using the audience selector from the drop-down below:
+                    <ui-select ng-model="visibility.selected.name">
+                        <ui-select-match placeholder="Friends">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="visi in settingsvm.visibilities">
+                            <span ng-bind="visi.name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </accordion-group>
+            </accordion>
+        </div>
+        <div class="col-md-4">
+            Who can contact me?
+        </div>
+        <div class="col-md-offset-1 col-md-7">
+            <accordion>
+                <accordion-group>
+                    <accordion-heading>
+                        Who can send you Follow requests?
+                    </accordion-heading>
+                    You can manage the privacy of things you share by using the audience selector from the drop-down below:
+                    <ui-select ng-model="visibility.selected.name">
+                        <ui-select-match placeholder="Friends">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="visi in settingsvm.visibilities">
+                            <span ng-bind="visi.name"></span>
+                        </ui-select-choices>
+                    </ui-select>
+                </accordion-group>
+            </accordion>
+        </div>
+    </div>
 
-</form>
+</div>

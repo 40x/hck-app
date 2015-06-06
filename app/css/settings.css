@@ -17,4 +17,9 @@
 .theme {
     height : 150px;
     margin : 5px;
+    cursor: pointer;
+}
+
+.settingsBckgrnd {
+    background: rgba(255,255,255,0.5);
 }

@@ -1,6 +1,6 @@
 (function(){
 
-    angular.module('application', ['ui.router', 'ui.bootstrap']);
+    angular.module('application', ['ui.router', 'ui.bootstrap', 'ui.select']);
 
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
 
