@@ -19,9 +19,10 @@
             }
 
             hc.deleteItem = function(i){
-
                 $('.lineItem').eq(i).hide("slow", function () {
                     hc.itemList.splice(i,1);
+                    hc.editableItem.splice(i,1);
+                    hc.favItem.splice(i,1);
                 });
             };
 
@@ -77,9 +78,9 @@
                     controllerAs : 'sic',
                     size:  'md',
                     resolve : {
-                        item: (function (i) {
+                        item: function () {
                             return hc.itemList[i];
-                        })(i)
+                        }
                     }
                 });
             };
