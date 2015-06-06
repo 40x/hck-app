@@ -7,6 +7,7 @@
     function config($stateProvider, $urlRouterProvider) {
 
         $urlRouterProvider.otherwise('/home');
+        $urlRouterProvider.when('/settings','/settings/account');
 
         $stateProvider
 

@@ -1,9 +1,25 @@
-<h2>Welcome to Notifications Page</h2>
 <div class="col-md-12 clearfix">
-    <div class="panel panel-default" ng-repeat="not in notificationVm.data">
-        <span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span>
-        <span class="pull-right clickable" data-effect="fadeOut" ng-click="notificationVm.close($index)"><i class="fa fa-times"></i></span>
-        <span class = "panel panel-heading">{{not.contentName}}</span>
-        <div class = "panel panel-body">{{not.contentNews}}</div>
+    <div class="notifications margin10 clearfix" ng-repeat="not in notificationVm.data">
+        <div class="col-xs-1 fa fa-bell-o fa-2x" aria-hidden="true"></div>
+        <div class="col-xs-10">
+            <div> <strong>{{not.contentName}}</strong></div>
+            <div ng-switch on="notificationVm.isArray(not.content)">
+                <div ng-switch-when="false">{{not.content}}</div>
+                <div ng-switch-when="true">
+                    <div ng-repeat="person in not.content">
+                        <div>
+                            {{person.name}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xs-1 text-right" ng-click="notificationVm.close($index)">
+            <i class="fa fa-times fa-2x"></i>
+        </div>
+        <div>
+            <div class = "col-xs-4 col-xs-offset-4"><img src={{not.img}} class="img-responsive"/></div>
+        </div>
     </div>
 </div>
