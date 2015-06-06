@@ -13,7 +13,17 @@
         <link rel="stylesheet" type="text/css" href="dist/scripts.min.css" />
         <script src="js/modernizr.custom.js"></script>
 	</head>
-	<body>
+	<body ng-controller="appController as appvm" ng-class="{
+	'blue-background' : appvm.value == 'blue',
+	'brown-background' : appvm.value == 'brown',
+	'green-background' : appvm.value == 'green',
+	'purple-background' : appvm.value == 'purple',
+	'yellow-background' : appvm.value == 'yellow',
+	'skyblue-background' : appvm.value == 'skyblue',
+	'orange-background' : appvm.value == 'orange',
+	'grey-background' : appvm.value == 'grey',
+	'darkred-background' : appvm.value == 'darkred',
+	}">
         <header class="text-center">
             <span ng-bind="'Something kickass' | uppercase "></span>
         </header>

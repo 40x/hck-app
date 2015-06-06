@@ -41,17 +41,29 @@
                 controllerAs: "settingsvm"
             })
             .state('settings.account', {
-                url: '/settings/account',
+                url: '/account',
                 templateUrl: 'partials/account.html',
                 controller: 'settingsController',
                 controllerAs: "settingsvm"
             })
             .state('settings.privacy', {
-                url: '/settings/privacy',
+                url: '/privacy',
                 templateUrl: 'partials/privacy.html',
                 controller: 'settingsController',
                 controllerAs: "settingsvm"
-            });
+            })
+            .state('settings.orderHistory', {
+                    url: '/orderHistory',
+                    templateUrl: 'partials/orderHistory.html',
+                    controller: 'settingsController',
+                    controllerAs: "settingsvm"
+                })
+            .state('settings.theme', {
+                    url: '/theme',
+                    templateUrl: 'partials/theme.html',
+                    controller: 'ThemeController',
+                    controllerAs: "themevm"
+                });
 
     }
 
