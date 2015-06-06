@@ -22,6 +22,12 @@
                 templateUrl: 'partials/notifications.html',
                 controller: 'notificationController',
                 controllerAs: 'nc'
+            })
+            .state('activity', {
+                url:'/activity',
+                templateUrl: 'partials/activity.html',
+                controller: 'ActivityCtrl',
+                controllerAs: 'acVm'
             });
 
     }
