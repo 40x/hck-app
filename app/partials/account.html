@@ -3,6 +3,19 @@
     Change your basic account settings.
     <hr>
     <form>
-
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="email" class="form-control" id="username" ng-model="settingsvm.username">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" ng-model="settingsvm.email">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputFile">Photo</label>
+            <input type="file" id="exampleInputFile">
+            <img ng-src= "{{settingsvm.pic}}" ng-if="settingsvm.pic">
+        </div>
+        <button type="submit" class="btn btn-default" ng-click="settingsvm.saveForm()">Submit</button>
     </form>
 </div>
