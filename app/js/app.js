@@ -28,6 +28,24 @@
                 templateUrl: 'partials/activity.html',
                 controller: 'ActivityCtrl',
                 controllerAs: 'acVm'
+            })
+            .state('settings', {
+                url: '/settings',
+                templateUrl: 'partials/settings.html',
+                controller: 'settingsController',
+                controllerAs: "settingsvm"
+            })
+            .state('settings.account', {
+                url: '/settings/account',
+                templateUrl: 'partials/account.html',
+                controller: 'settingsController',
+                controllerAs: "settingsvm"
+            })
+            .state('settings.privacy', {
+                url: '/settings/privacy',
+                templateUrl: 'partials/privacy.html',
+                controller: 'settingsController',
+                controllerAs: "settingsvm"
             });
 
     }

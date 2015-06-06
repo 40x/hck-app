@@ -1,0 +1,13 @@
+.settingsNavbar ul li a{
+    padding : 10px;
+    display:block;
+}
+
+.settingsNavbar ul li a:hover{
+    color : blue;
+    background-color: lightgrey;
+}
+
+.settingsNavbar ul li {
+    list-style-type: none;
+}
